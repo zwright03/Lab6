@@ -15,6 +15,14 @@ def encoder(password_in):  # takes a numerical password in, returns all digits i
     return stored_pass
 
 
+def decoder(password_in):
+    stored_pass = ''
+    for char in password_in:
+        char = int(char) - 3
+        stored_pass += str(char)[-1]  # if 7, 8, or 9 then the output is 2 digits, only the last one is needed
+    return stored_pass
+
+
 def main():
     final_password = None
     password_input = None
